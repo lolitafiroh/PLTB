@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulasi PLTB (Angin)</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+           
+<div class="container">
+
+  <h1 class="title">
+    Simulasi Cara Kerja<br>
+    PLTB (Angin)
+  </h1>
+
+  <p class="subtitle">
+    Mengubah energi kinetik angin menjadi energi mekanik
+    (putaran) lalu menjadi energi listrik.
+  </p>
+
+  <!-- SIMULASI -->
+  <div class="simulation-box" id="simulation">
+    <div class=" cloud cloud1"></div>
+        <div class=" cloud cloud2"></div>
+         <div class=" cloud cloud3"></div>
+    <!-- GARIS ANGIN -->
+    <div id="windContainer"></div>
+
+    <!-- TANAH -->
+    <div class="ground"></div>
+
+    <!-- TURBIN -->
+    <div class="tower">
+
+      <div class="nacelle">
+
+        <div class="hub"></div>
+
+        <div class="blades" id="blades">
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+        </div>
+
+        <div class="label nacelle-label">
+          NACELLE (GENERATOR)
+        </div>
+
+      </div>
+
+      <div class="label tower-label">
+        MENARA
+      </div>
+
+      <div class="label blade-label">
+        BILAH (BLADES)
+      </div>
+
+    </div>
+
+    <!-- KABEL -->
+    <div class="cable" id="cable">
+
+      <div class="energy"></div>
+      <div class="energy"></div>
+      <div class="energy"></div>
+
+    </div>
+
+    <!-- RUMAH -->
+    <div class="house">
+
+      <div class="roof"></div>
+
+      <div class="window left" id="window1"></div>
+      <div class="window right" id="window2"></div>
+
+      <div class="label house-label">
+        KONSUMEN
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- INFORMASI -->
+  <div class="info-box">
+
+    <div class="speed-box">
+
+      <h2>Kecepatan Angin:</h2>
+
+      <h2 class="speed-status" id="speedText">
+        Tenang (0 m/s)
+      </h2>
+    </div>
+
+    <!-- SLIDER -->
+    <input
+      type="range"
+      min="0"
+      max="3"
+      value="0"
+      id="windSlider"
+    >
+
+    <!-- PENJELASAN -->
+    <div class="principle" id="principle">
+
+      <strong>Prinsip:</strong>
+      Angin memutarkan <b>Bilah (Blades).</b> Putaran
+      diteruskan ke <b>Generator</b> di dalam Nacelle.
+      Listrik turun memalui kabel di dalam <b>Menara</b>
+      menuju sistem transmisi.
+      
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

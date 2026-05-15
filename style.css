@@ -1,0 +1,425 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#ededed;
+    display:flex;
+    justify-content:center;
+    padding:25px 15px;
+    color:#1d2940;
+}
+
+.container{
+    width:100%;
+    max-width:950px;
+}
+
+.title{
+    text-align:center;
+    font-size:64px;
+    font-weight:bold;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:26px;
+    line-height:1.6;
+    color:#5d6577;
+    margin-bottom:35px;
+}
+
+/* BOX */
+
+.simulation-box{
+    position:relative;
+    width:100%;
+    height:470px;
+    background:linear-gradient(#bde7ff,#eaf7ff);
+    border-radius:35px;
+    overflow:hidden;
+}
+
+/* TANAH */
+
+.ground{
+    position:absolute;
+    bottom:-20px;
+    width:100%;
+    height:90px;
+    background:#7be2a1;
+    border-radius:50%;
+}
+
+/* GARIS ANGIN */
+
+.wind-line{
+    position:absolute;
+    height:3px;
+    background:rgba(255,255,255,0.7);
+    border-radius:20px;
+    animation:windMove linear infinite;
+}
+
+@keyframes windMove{
+
+    from{
+        transform:translateX(-300px);
+    }
+
+    to{
+        transform:translateX(1300px);
+    }
+}
+
+/* TOWER */
+
+.tower{
+    position:absolute;
+    left:50%;
+    bottom:55px;
+    transform:translateX(-50%);
+    width:25px;
+    height:250px;
+    background:#8b92a5;
+}
+
+.nacelle{
+    position:absolute;
+    top:0;
+    left:100%;
+    transform:translate(-10px,-10px);
+    width:55px;
+    height:32px;
+    background:#8b92a5;
+    border-radius:5px;
+}
+
+/* HUB */
+
+.hub{
+    position:absolute;
+    width:18px;
+    height:18px;
+    background:#555;
+    border-radius:50%;
+    left:-10%;
+    top:7px;
+    transform:translateX(-50%);
+    z-index:100;
+}
+
+/* BLADES */
+
+.blades{
+    position:absolute;
+    width:140px;
+    height:140px;
+    top:-58px;
+    left:0%;
+    animation:spin 5s linear infinite;
+}
+
+.blade{
+    position:absolute;
+    width:15px;
+    height:72px;
+    background:white;
+    border-radius:100px;
+    left:60px;
+    top:0;
+    transform-origin:bottom center;
+}
+
+.blade:nth-child(2){
+    transform:rotate(120deg);
+}
+
+.blade:nth-child(3){
+    transform:rotate(240deg);
+}
+
+@keyframes spin{
+
+    from{
+        transform:translateX(-50%) rotate(0deg);
+    }
+
+    to{
+        transform:translateX(-50%) rotate(360deg);
+    }
+}
+
+/* LABEL */
+
+.label{
+    position:absolute;
+    font-size:14px;
+    font-weight:bold;
+    color:#303030;
+}
+
+.blade-label{
+    left:-90px;
+    top:-35px;
+}
+
+.nacelle-label{
+    left:45px;
+    top:0;
+}
+
+.tower-label{
+    left:-70px;
+    top:130px;
+}
+
+.house-label{
+    right:-30px;
+    bottom:-25px;
+}
+
+/* HOUSE */
+
+.house{
+    position:absolute;
+    right:70px;
+    bottom:45px;
+    width:100px;
+    height:95px;
+    background:#ff7070;
+}
+
+.roof{
+    position:absolute;
+    top:-40px;
+    left:-10px;
+    width:0;
+    height:0;
+    border-left:60px solid transparent;
+    border-right:60px solid transparent;
+    border-bottom:45px solid #b41414;
+}
+
+.window{
+    position:absolute;
+    width:20px;
+    height:28px;
+    background:#33425a;
+    top:25px;
+}
+
+.window.left{
+    left:20px;
+}
+
+.window.right{
+    right:20px;
+}
+
+.window.active{
+    background:#ffd84c;
+    box-shadow:0 0 15px #ffd84c;
+}
+
+/* KABEL */
+
+.cable{
+    position:absolute;
+    width:320px;
+    border-top:3px dashed #555;
+    bottom:62px;
+    left:50%;
+}
+
+/* LISTRIK */
+
+.energy{
+    position:absolute;
+    width:10px;
+    height:10px;
+    background:gold;
+    border-radius:50%;
+    bottom:-6px;
+    animation:energyMove 2s linear infinite;
+}
+
+.energy:nth-child(2){
+    animation-delay:.5s;
+}
+
+.energy:nth-child(3){
+    animation-delay:1s;
+}
+
+@keyframes energyMove{
+
+    from{
+        left:0;
+    }
+
+    to{
+        left:100%;
+    }
+}
+
+/* INFO */
+
+.info-box{
+    background:white;
+    margin-top:30px;
+    padding:35px;
+    border-radius:35px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.07);
+}
+
+.speed-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.speed-box h2{
+    font-size:45px;
+}
+
+.speed-status{
+    color:#367af6;
+}
+
+/* AREA LANGIT */
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* CONTAINER CLOUD */
+.background-elements {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* CLOUD DASAR */
+.cloud {
+  position: absolute;
+  width: 120px;
+  height: 50px;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.9;
+}
+
+/* BENTUK CLOUD */
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 50px;
+  height: 50px;
+  top: -20px;
+  left: 15px;
+}
+
+.cloud::after {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  right: 15px;
+}
+
+/* POSISI CLOUD */
+.cloud1 {
+  top: 110px;
+  left: 10%;
+}
+
+.cloud2 {
+  top: 80px;
+  left: 45%;
+}
+
+.cloud3 {
+  top: 50px;
+  left: 75%;
+}
+
+.simulation-box {
+  position: relative;
+  overflow: hidden;
+}
+.cloud {
+  z-index: 5;
+}
+
+/* SLIDER */
+
+input[type=range]{
+    width:100%;
+    margin-bottom:35px;
+    height:12px;
+}
+
+/* PRINCIPLE */
+
+.principle{
+    border-left:8px solid #5aa7ff;
+    padding-left:20px;
+    font-size:22px;
+    line-height:1.7;
+    color:#666d7c;
+}
+
+.principle strong{
+    color:#2e3447;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .title{
+        font-size:48px;
+    }
+
+    .subtitle{
+        font-size:21px;
+    }
+
+    .simulation-box{
+        height:420px;
+    }
+
+    .speed-box h2{
+        font-size:30px;
+    }
+
+    .principle{
+        font-size:18px;
+    }
+
+    .house{
+        right:30px;
+        transform:scale(.9);
+    }
+
+    .cable{
+        width:240px;
+    }
+}
