@@ -88,6 +88,7 @@ function updateCondition(value){
         cable.style.opacity = "1";
     }
 
+    
     /* SEDANG */
     else if(value == 2){
 
